@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+  <header><h1>Register</h1></header>
+  <main>
+    <form action="/api/register" method="post" class="form-card">
+      <label>Name:<input type="text" name="name" required></label>
+      <label>Email:<input type="email" name="email" required></label>
+      <label>Password:<input type="password" name="password" required></label>
+      <label>Role:
+        <select name="role">
+          <option value="applicant">Applicant</option>
+          <option value="employer">Employer</option>
+        </select>
+      </label>
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </main>
+</body>
+</html>
