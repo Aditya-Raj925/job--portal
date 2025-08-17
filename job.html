@@ -7,12 +7,20 @@
 </head>
 <body>
   <header>
-    <h1>Browse Job Listings</h1>
+    <div class="logo">JOB PORTAL</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Create Profile</a>
+      <a href="login.html">Login</a>
+    </nav>
   </header>
 
   <main>
-        <section class="filters">
-      <div>
+    <h2 style="text-align:center; margin:20px 0;">Browse Job Listings</h2>
+
+    <!-- Filters Section -->
+    <section class="filters">
+          <div>
         <label for="course">Course Type:</label>
         <select id="course">
           <option value="">-- Select Course --</option>
@@ -82,9 +90,9 @@
       </div>
     </section>
 
+    <!-- Jobs List -->
     <section class="job-list" id="jobList">
-      <!-- Sample Job Cards (Add more for all states as needed) -->
-      <div class="job-card" data-type="Frontend" data-state="Andhra Pradesh" data-course="Engineering">
+            <div class="job-card" data-type="Frontend" data-state="Andhra Pradesh" data-course="Engineering">
         <h3>Frontend Developer</h3>
         <p>Location: Andhra Pradesh</p>
         <p>React.js, HTML, CSS</p>
@@ -364,8 +372,10 @@
     </section>
   </main>
 
+  <footer>&copy; 2025 Job Portal</footer>
+
   <script>
-    const jobType = document.getElementById("jobType");
+       const jobType = document.getElementById("jobType");
     const state = document.getElementById("state");
     const course = document.getElementById("course");
     const jobCards = document.querySelectorAll(".job-card");
