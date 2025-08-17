@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post a Job</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Post a Job</h1>
+  </header>
+
+  <main>
+    <form class="post-job-form">
+      <label for="title">Job Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="company">Company Name:</label>
+      <input type="text" id="company" name="company" required>
+
+      <label for="location">Location:</label>
+      <select id="location" name="location" required>
+        <option value="">-- Select State --</option>
+        <option>Andhra Pradesh</option>
+        <option>Arunachal Pradesh</option>
+        <option>Assam</option>
+        <option>Bihar</option>
+        <option>Chhattisgarh</option>
+        <option>Goa</option>
+        <option>Gujarat</option>
+        <option>Haryana</option>
+        <option>Himachal Pradesh</option>
+        <option>Jharkhand</option>
+        <option>Karnataka</option>
+        <option>Kerala</option>
+        <option>Madhya Pradesh</option>
+        <option>Maharashtra</option>
+        <option>Manipur</option>
+        <option>Meghalaya</option>
+        <option>Mizoram</option>
+        <option>Nagaland</option>
+        <option>Odisha</option>
+        <option>Punjab</option>
+        <option>Rajasthan</option>
+        <option>Sikkim</option>
+        <option>Tamil Nadu</option>
+        <option>Telangana</option>
+        <option>Tripura</option>
+        <option>Uttar Pradesh</option>
+        <option>Uttarakhand</option>
+        <option>West Bengal</option>
+        <option>Delhi (NCT)</option>
+        <option>Jammu and Kashmir</option>
+        <option>Ladakh</option>
+        <option>Puducherry</option>
+      </select>
+
+      <label for="type">Job Type:</label>
+      <select id="type" name="type" required>
+        <option value="">-- Select Type --</option>
+        <option value="Frontend">Frontend Developer</option>
+        <option value="Backend">Backend Developer</option>
+        <option value="Internship">Engineering Internship</option>
+      </select>
+
+      <label for="salary">Salary (INR/month):</label>
+      <input type="number" id="salary" name="salary" required>
+
+      <label for="applicants">Number of Applicants:</label>
+      <input type="number" id="applicants" name="applicants" value="0" required>
+
+      <label for="description">Job Description:</label>
+      <textarea id="description" name="description" rows="5" required></textarea>
+
+      <button type="submit">Post Job</button>
+    </form>
+  </main>
+<script>
+document.getElementById('jobForm').addEventListener('submit', async (e)=>{
+ e.preventDefault();
+ const data = Object.fromEntries(new FormData(e.target));
+ const res = await fetch('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+ document.getElementById('msg').textContent = res.ok ? 'Job created!' : await res.text();
+});
+</script>
+</body></html>

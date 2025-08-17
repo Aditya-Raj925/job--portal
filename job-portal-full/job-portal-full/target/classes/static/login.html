@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">JOB PORTAL</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Create Profile</a>
+      <a href="jobs.html">Jobs</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align:center; margin-bottom:20px;">Login</h2>
+    <form action="/api/login" method="post" class="form-card">
+      <label>Email:<input type="email" name="email" required></label>
+      <label>Password:<input type="password" name="password" required></label>
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </main>
+
+  <footer>&copy; 2025 Job Portal</footer>
+</body>
+</html>
